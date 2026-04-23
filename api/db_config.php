@@ -22,6 +22,7 @@ function getDBConnection() {
         ]));
     }
 }
+
 define('ADMIN_USERNAME', 'godsteam_admin');
 define('ADMIN_PASSWORD', 'Admin@2026Secure');
 ?>
