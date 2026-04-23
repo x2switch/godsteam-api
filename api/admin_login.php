@@ -21,7 +21,7 @@ $token = bin2hex(random_bytes(32));
 try {
     $pdo = getDBConnection();
     
-    $stmt = $pdo->prepare("INSERT INTO admin_tokens (token, expires_at) VALUES (?, DATE_ADD(NOW(), INTERVAL 24 HOUR))");
+    $stmt = $pdo->prepare("INSERT INTO admin_tokens (token, expires_at) VALUES (?, NOW() + INTERVAL '24 hours')");
     $stmt->execute([$token]);
     
     echo json_encode([
